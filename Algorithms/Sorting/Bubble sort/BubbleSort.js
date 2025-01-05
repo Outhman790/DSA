@@ -3,19 +3,16 @@
 const bubbleSort = (arr, ascending = true) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i; j++)
-      if (!ascending) {
-        if (arr[j] < arr[j + 1]) {
-          let temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
-        }
-      } else {
-        if (arr[j] > arr[j + 1]) {
-          let temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
-        }
+      if (
+        (arr[j] < arr[j + 1] && !ascending) ||
+        (arr[j] > arr[j + 1] && ascending)
+      ) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
   }
   return arr;
 };
+console.log(bubbleSort([1, 3, 5, 6]));
+console.log(bubbleSort([1, 3, 5, 6], false));
