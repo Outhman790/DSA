@@ -17,7 +17,7 @@
 
 const searchInsert = (arr, target, left = 0, right = arr.length - 1) => {
   if (left > right) {
-    return right + 1;
+    return right + 1; // could also return left
   }
   let middle = Math.floor((left + right) / 2);
   if (arr[middle] < target) {
@@ -30,3 +30,4 @@ const searchInsert = (arr, target, left = 0, right = arr.length - 1) => {
 };
 
 console.log(searchInsert([1, 3, 5, 6], 5));
+console.log(searchInsert([1, 3, 5, 6], 2));
