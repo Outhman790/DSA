@@ -35,3 +35,5 @@ const maxProfit = function (prices) {
 
   return maxProfit;
 };
+// Time complexity: O(n)
+// Space complexity: O(1)
