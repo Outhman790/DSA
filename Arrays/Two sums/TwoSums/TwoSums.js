@@ -32,4 +32,21 @@ var twoSum = function (nums, target) {
   }
   return Output;
 };
-console.log(twoSum([1, 2, 3, 4, 7, 11, 15, 3, 6, 10, 19], 9));
+// Solving two sum problem using hash map
+const twoSum2 = function (nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+};
+
+// Example usage:
+const nums = [2, 7, 11, 15];
+const target = 9;
+const result = twoSum2(nums, target);
+console.log(result);
