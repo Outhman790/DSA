@@ -16,6 +16,7 @@
 // Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
 
+// I've solved this problem using the two pointer approach.
 const maxProfit = function (prices) {
   let left = 0; // Buy pointer
   let right = 1; // Sell pointer
