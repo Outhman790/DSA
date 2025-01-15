@@ -20,9 +20,15 @@ class LinkedList {
     this.tail = newNode;
     this.length++;
   }
+  insertAtHead(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+  }
 }
 
 const ll = new LinkedList(1);
 ll.push(2);
-ll.push(3);
+ll.insertAtHead(0);
 console.log(ll);
