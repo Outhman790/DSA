@@ -26,6 +26,7 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
+  aze;
 }
 
 const ll = new LinkedList(1);
