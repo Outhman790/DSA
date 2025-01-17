@@ -26,10 +26,23 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
-  aze;
+  pop() {
+    let temp = this.head;
+    let prev = this.head;
+    while (temp.next) {
+      prev = temp;
+      temp = temp.next;
+    }
+    this.tail = prev;
+    this.tail.next = null;
+    this.length--;
+    return temp;
+  }
 }
 
 const ll = new LinkedList(1);
 ll.push(2);
+ll.push(3);
 ll.insertAtHead(0);
+ll.pop();
 console.log(ll);
