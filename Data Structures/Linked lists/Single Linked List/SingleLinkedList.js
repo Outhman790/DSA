@@ -38,6 +38,12 @@ class LinkedList {
     this.length--;
     return temp;
   }
+  shift() {
+    let temp = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return temp;
+  }
 }
 
 const ll = new LinkedList(1);
