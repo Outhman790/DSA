@@ -44,6 +44,12 @@ class LinkedList {
     this.length--;
     return temp;
   }
+  unshift(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+  }
 }
 
 const ll = new LinkedList(1);
