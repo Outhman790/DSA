@@ -50,6 +50,13 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
+  get(index) {
+    let temp = this.head;
+    for (let i = 0; i < index; i++) {
+      temp = temp.next;
+    }
+    return temp;
+  }
 }
 
 const ll = new LinkedList(1);
