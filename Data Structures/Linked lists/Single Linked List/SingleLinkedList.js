@@ -57,16 +57,48 @@ class LinkedList {
   }
   get(index) {
     let temp = this.head;
-    for (let i = 0; i < index; i++) {
+    for (let i = 0; i < index - 1; i++) {
       temp = temp.next;
+      if (!temp) return null;
     }
     return temp;
+  }
+  getFirst() {
+    return this.head;
+  }
+  getLast() {
+    let temp = this.head;
+    while (temp) {
+      if (!temp.next) return temp;
+      temp = temp.next;
+    }
+  }
+  set(index, value) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.data = value;
+      return true;
+    }
+    return false;
+  }
+  insert(index, value) {
+    let temp = this.get(index - 1);
+    if (temp) {
+      let newNode = new Node(value);
+      newNode.next = temp.next;
+      temp.next = newNode;
+      this.length++;
+      return true;
+    }
+    return false;
+  }
+  getLength() {
+    return this.length;
   }
 }
 
 const ll = new LinkedList(1);
 ll.push(2);
-ll.push(3);
-ll.insertAtHead(0);
-ll.pop();
+ll.insert(2, 10);
 console.log(ll);
+console.log(ll.getLength());
