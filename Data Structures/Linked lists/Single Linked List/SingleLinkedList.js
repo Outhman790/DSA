@@ -93,7 +93,13 @@ class LinkedList {
     return false;
   }
   getLength() {
-    return this.length;
+    let temp = this.head;
+    let counter = 0;
+    while (temp) {
+      counter++;
+      temp = temp.next;
+    }
+    return counter;
   }
 }
 
