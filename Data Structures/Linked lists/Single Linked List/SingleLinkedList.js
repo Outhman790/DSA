@@ -101,6 +101,11 @@ class LinkedList {
     }
     return counter;
   }
+  clear() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 }
 
 const ll = new LinkedList(1);
